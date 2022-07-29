@@ -43,6 +43,9 @@ public class main {
 			int dicePick3 = myObj.nextInt();
 			int dicePick4 = myObj.nextInt();
 			int dicePick5 = myObj.nextInt();
+			//set boolean to true if it is kept so it cant be rerolled in the last reroll
+			
+			
 			int[]  chooseReroll = new int[] {dicePick, dicePick2, dicePick3, dicePick4, dicePick5};
 			//int[] choices = chooseReroll[]{dicePick, dicePick2, dicePick3, dicePick4, dicePick5};
 			
@@ -62,36 +65,20 @@ public class main {
 			}
 			
 			diceObj.PrintBoard(currentBoard);
-		/*	 if (dicePick == 1) {
-				int rerolled = diceObj.rerollDice(dicePick);
-				currentBoard[0] = rerolled;
-				diceObj.PrintBoard(currentBoard);
-			 }
-			 if (dicePick == 2) {
-					int rerolled = diceObj.rerollDice(dicePick);
-					currentBoard[1] = rerolled;
-					diceObj.PrintBoard(currentBoard);
-				 }
-			 if (dicePick == 3) {
-					int rerolled = diceObj.rerollDice(dicePick);
-					currentBoard[2] = rerolled;
-					diceObj.PrintBoard(currentBoard);
-				 }
-			 if (dicePick == 4) {
-					int rerolled = diceObj.rerollDice(dicePick);
-					currentBoard[3] = rerolled;
-					diceObj.PrintBoard(currentBoard);
-				 }
-			 if (dicePick == 5) {
-					int rerolled = diceObj.rerollDice(dicePick);
-					currentBoard[4] = rerolled;
-					diceObj.PrintBoard(currentBoard);
-					
-				 }
-			 if (dicePick == 0) {
-				   currentBoard = diceObj.storeDice();
-			 }
-			 */
+
+			System.out.println("Do you want to reroll one last time? Press 1 for yes 0 for no.");
+			
+			int finalReroll = myObj.nextInt();
+			if (finalReroll == 1) {
+			
+			
+			
+			
+			}
+			 if(finalReroll == 0){
+				}
+				
+		
 			 //if kept roll less dice up to 2 more times.
 			 //place in bucket to score (also to not have thigns overwrite use boolean to see if bucket is already filled)
 			
