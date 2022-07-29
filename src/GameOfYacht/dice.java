@@ -16,9 +16,7 @@ public class dice {
         return generator.nextInt(6) + 1;
     }
     
-    public void PrintBoard() {
-    	int[] board = storeDice();
-    	
+    public void PrintBoard(int[] board) {  	
     	System.out.println(Arrays.toString(board));
 	}
     
@@ -34,4 +32,17 @@ public class dice {
     	
     	return arr;
     	}
+    
+    public int rerollDice(int dicePosition) {
+    	int rerolledDice = CreateDice();
+    	return rerolledDice;
+    }
+    
+    public int[] holdDice() {
+    	int[] board = storeDice();   	
+    	
+    	int[] arr = new int[]{};
+    	
+    	return arr;
+    }
 }

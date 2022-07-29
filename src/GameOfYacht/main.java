@@ -7,6 +7,7 @@ public class main {
 
 		 int choice = 0;
 		 boolean gameContinue = true;
+		 boolean gameInProgress = true;
 		 dice diceObj = new dice(); 
 		// gamestate gsOb = new gamestate();
 		 while(gameContinue == true) {
@@ -22,14 +23,45 @@ public class main {
 			 if (choice == 1) {
 			 //start game
 			 //roll 5 dice
-			 diceObj.PrintBoard();
+			while(gameInProgress) {
+			 int[] currentBoard = diceObj.storeDice();
+			 diceObj.PrintBoard(currentBoard);
 			 //which dice to keep if else 1 2 3 4 5?
-				
+			 System.out.println("Which dice do you want to keep, type a number 1-5, if you don't want to keep any pick 0");
 			
+			 int dicePick = myObj.nextInt();
+			 if (dicePick == 1) {
+				int rerolled = diceObj.rerollDice(dicePick);
+				currentBoard[0] = rerolled;
+				diceObj.PrintBoard(currentBoard);
+			 }
+			 if (dicePick == 2) {
+					int rerolled = diceObj.rerollDice(dicePick);
+					currentBoard[1] = rerolled;
+					diceObj.PrintBoard(currentBoard);
+				 }
+			 if (dicePick == 3) {
+					int rerolled = diceObj.rerollDice(dicePick);
+					currentBoard[2] = rerolled;
+					diceObj.PrintBoard(currentBoard);
+				 }
+			 if (dicePick == 4) {
+					int rerolled = diceObj.rerollDice(dicePick);
+					currentBoard[3] = rerolled;
+					diceObj.PrintBoard(currentBoard);
+				 }
+			 if (dicePick == 5) {
+					int rerolled = diceObj.rerollDice(dicePick);
+					currentBoard[4] = rerolled;
+					diceObj.PrintBoard(currentBoard);
+				 }
+			 if (dicePick == 0) {
+				   currentBoard = diceObj.storeDice();
+			 }
 			 //if kept roll less dice up to 2 more times.
 			 //place in bucket to score (also to not have thigns overwrite use boolean to see if bucket is already filled)
 			
-			 
+			 }
 			 }
 			 else if (choice == 2) {
 				 System.out.println("Yacht is a game where you roll five dice up to 3 times per turn.");
