@@ -6,6 +6,7 @@ public class main {
 	 public static void main(String[] args) {
 		 Scanner in = new Scanner(System.in); 
 		 int choice = 0;
+		 int[] currentBoard;
 		 boolean gameContinue = true;
 		 boolean gameInProgress = true;
 		 boolean rerolling = true;
@@ -25,10 +26,9 @@ public class main {
 			 //start game
 			 //roll 5 dice
 			while(gameInProgress) {
-			 int[] currentBoard = diceObj.storeDice();
+			  currentBoard = diceObj.storeDice();
 			 diceObj.PrintBoard(currentBoard);
 			 //which dice to keep if else 1 2 3 4 5?
-			 System.out.println("Which dice do you want to keep, type a number 1-5, if you don't want to keep any pick 0");
 			
 			 
 			//reroll all at once
@@ -37,8 +37,32 @@ public class main {
 			 //do this another time if there isnt 5 dice kept
 			 //3rd round is the final so everything is kept.
 			 while(rerolling) {
+				 System.out.println("To reroll: Enter 1 to keep, 0 to reroll");
 			int dicePick = myObj.nextInt();
-			 if (dicePick == 1) {
+			int dicePick2 = myObj.nextInt();
+			int dicePick3 = myObj.nextInt();
+			int dicePick4 = myObj.nextInt();
+			int dicePick5 = myObj.nextInt();
+			int[]  chooseReroll = new int[] {dicePick, dicePick2, dicePick3, dicePick4, dicePick5};
+			//int[] choices = chooseReroll[]{dicePick, dicePick2, dicePick3, dicePick4, dicePick5};
+			
+			for(int i = 0; i < chooseReroll.length;i++ ) {
+			
+				if(chooseReroll[i] == 0) {
+					
+					currentBoard[i] = diceObj.rerollDice(i);
+				}
+				else if (chooseReroll[i] == 1) {
+					
+					System.out.println("Keeping Dice " + (i+1)  + "\n");
+				}
+				else {
+					System.out.println("Invalid choices");
+				}
+			}
+			
+			diceObj.PrintBoard(currentBoard);
+		/*	 if (dicePick == 1) {
 				int rerolled = diceObj.rerollDice(dicePick);
 				currentBoard[0] = rerolled;
 				diceObj.PrintBoard(currentBoard);
@@ -67,6 +91,7 @@ public class main {
 			 if (dicePick == 0) {
 				   currentBoard = diceObj.storeDice();
 			 }
+			 */
 			 //if kept roll less dice up to 2 more times.
 			 //place in bucket to score (also to not have thigns overwrite use boolean to see if bucket is already filled)
 			
