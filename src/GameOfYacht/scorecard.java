@@ -1,18 +1,23 @@
 package GameOfYacht;
 
-public class scorecard {
+import java.util.HashMap;
 
-	public static int[] score;
+public class scorecard {
+	HashMap<String, Integer> scoreCard = new HashMap<String, Integer>();
+	String scoreBucket;
+	Integer scoreValue;
 	
-	public static int[] updateScore(int[] scoreCard) {
-		score = scoreCard;
-		
-	
-				
-				
-				
-		return score;
-		
+	public scorecard(String score, Integer value) {
 		
 	}
+	
+	public void UpdateScoreCard() {
+	//	scorecard.put("Ones", null);
+	}
+	
+	
+	public void PrintScoreCard() {
+		
+	}
+	
 }

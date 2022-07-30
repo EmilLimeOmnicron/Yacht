@@ -82,6 +82,7 @@ public class main {
 				}
 			
 			}
+			
 			 if(finalReroll == 0){
 				 
 				}
@@ -89,8 +90,11 @@ public class main {
 		
 			 //if kept, roll dice up to 1 more times.
 			 //place in bucket to score (also to not have thigns overwrite use boolean to see if bucket is already filled)
-			
+			 diceObj.PrintBoard(currentBoard);
+			 
 			 }
+
+				
 			}
 			}
 			 else if (choice == 2) {
@@ -114,7 +118,8 @@ public class main {
 		 
 		 
 			 else if (choice == 3) {
-				 gameContinue = false;				 
+				 System.out.println("Exiting game... ");
+				 System.exit(0);			 
 			 }
 		 
 			 else if (!(choice == 3) && gameContinue == true) {
@@ -124,6 +129,5 @@ public class main {
 		 
 		 }
 		 
-		
 		 }
 }
