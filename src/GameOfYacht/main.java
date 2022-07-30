@@ -7,9 +7,11 @@ public class main {
 		 Scanner in = new Scanner(System.in); 
 		 int choice = 0;
 		 int[] currentBoard;
+		 int[] scoreCard;
 		 boolean gameContinue = true;
 		 boolean gameInProgress = true;
 		 boolean rerolling = true;
+		 boolean diceRerolled = false;
 		 dice diceObj = new dice(); 
 		// gamestate gsOb = new gamestate();
 		 while(gameContinue == true) {
@@ -29,7 +31,7 @@ public class main {
 			  currentBoard = diceObj.storeDice();
 			 diceObj.PrintBoard(currentBoard);
 			 //which dice to keep if else 1 2 3 4 5?
-			
+			//if not keeping, go to scoring ->
 			 
 			//reroll all at once
 			 //make array to get all choices
@@ -47,12 +49,12 @@ public class main {
 			
 			
 			int[]  chooseReroll = new int[] {dicePick, dicePick2, dicePick3, dicePick4, dicePick5};
-			//int[] choices = chooseReroll[]{dicePick, dicePick2, dicePick3, dicePick4, dicePick5};
+			Boolean[] rerolledArray = new Boolean[5];
 			
 			for(int i = 0; i < chooseReroll.length;i++ ) {
 			
 				if(chooseReroll[i] == 0) {
-					
+					rerolledArray[i] = true;
 					currentBoard[i] = diceObj.rerollDice(i);
 				}
 				else if (chooseReroll[i] == 1) {
@@ -70,16 +72,22 @@ public class main {
 			
 			int finalReroll = myObj.nextInt();
 			if (finalReroll == 1) {
-			
-			
-			
+				for(int i = 0; i < rerolledArray.length;i++) {
+					if(rerolledArray[i] == true) {
+						continue;
+					}
+					else {
+						currentBoard[i] = diceObj.rerollDice(i);
+					}
+				}
 			
 			}
 			 if(finalReroll == 0){
+				 
 				}
 				
 		
-			 //if kept roll less dice up to 2 more times.
+			 //if kept, roll dice up to 1 more times.
 			 //place in bucket to score (also to not have thigns overwrite use boolean to see if bucket is already filled)
 			
 			 }
