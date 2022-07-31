@@ -1,5 +1,6 @@
 package GameOfYacht;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
@@ -7,11 +8,13 @@ public class main {
 		 Scanner in = new Scanner(System.in); 
 		 int choice = 0;
 		 int[] currentBoard;
-		 int[] scoreCard;
+		
 		 boolean gameContinue = true;
 		 boolean gameInProgress = true;
 		 boolean rerolling = true;
 		 boolean diceRerolled = false;
+		
+		 
 		 dice diceObj = new dice(); 
 		// gamestate gsOb = new gamestate();
 		 while(gameContinue == true) {
@@ -131,3 +134,9 @@ public class main {
 		 
 		 }
 }
+
+
+
+
+
+

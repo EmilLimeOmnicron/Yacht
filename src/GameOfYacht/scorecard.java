@@ -3,7 +3,7 @@ package GameOfYacht;
 import java.util.HashMap;
 
 public class scorecard {
-	HashMap<String, Integer> scoreCard = new HashMap<String, Integer>();
+
 	String scoreBucket;
 	Integer scoreValue;
 	
