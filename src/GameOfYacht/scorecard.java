@@ -4,9 +4,17 @@ import java.util.HashMap;
 
 public class scorecard {
 	int choice;
-	public void ScoreChoice(int choice) {
+	int counter;
+	int[] scoreArray;
+	public void ScoreChoice(int choice, int[] arr) {
+		
 		if(choice == 1) {
-			
+			for (int i = 0; i < arr.length; i++) {
+				if(arr[i] == 1) {
+					counter++;
+				}
+			}
+			UpdateScoreCard(choice,arr,counter);
 		}
 		
 		else if(choice == 2) {
@@ -42,11 +50,15 @@ public class scorecard {
 		else if(choice == 12) {
 			
 		}
+		else {
+			System.out.println("Invalid Choice. Reinput score");
+		}
 		}
 
-	
-	public void UpdateScoreCard() {
-	//	scorecard.put("Ones", null);
+	//helper method for ScoreChoice to update the score array to easily store and print out everything at once.
+	public void UpdateScoreCard(int choice, int[] scoreArray, int value) {
+		scoreArray[choice] = value;
+		
 	}
 	
 	
