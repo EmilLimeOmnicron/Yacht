@@ -11,15 +11,25 @@ public class dice {
 
     private static final Random generator = new Random();
     
-    
+    /*Functionality: Makes a regular dice 1-6.
+     * 
+     */
     public int CreateDice() {
         return generator.nextInt(6) + 1;
     }
     
+    /*Functionality: Prints out the board.
+     * 
+     */
     public void PrintBoard(int[] board) {  	
     	System.out.println(Arrays.toString(board));
 	}
     
+    
+    /*Functionality: Initially stores the 1st run of the round of dice into the array. 
+     * 
+     * 
+     */
     public int[] storeDice() {
     	dice1 = CreateDice();
     	dice2 = CreateDice();
@@ -32,12 +42,18 @@ public class dice {
     	
     	return arr;
     	}
-    
+    /*Functionality: Rerolls dice at the position of choice
+     * 
+     * 
+     */
     public int rerollDice(int dicePosition) {
     	int rerolledDice = CreateDice();
     	return rerolledDice;
     }
-    
+    /*TODO
+     * 
+     * 
+     */
     public int[] holdDice() {
     	int[] board = storeDice();   	
     	
