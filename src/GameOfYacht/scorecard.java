@@ -1,5 +1,6 @@
 package GameOfYacht;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class scorecard {
@@ -62,16 +63,38 @@ public class scorecard {
 			UpdateScoreCard(choice,arr,counter);
 		}
 		else if(choice == 7) {
-		
+			
+			for(int i = 0; i < arr.length; i++) {
+				for(int j = i + 1; j < arr.length; j++) {
+					if(i == j) {
+						counter++;
+					}
+				}
+			}
+			
 		}
 		else if(choice == 8) {
 	
 		}
 		else if(choice == 9) {
-		
+			Arrays.sort(arr);
+			if(arr[0] == 1 && arr[1] == 2 && arr[2] == 3 && arr[3] == 4 && arr[4] == 5) {
+				System.out.println("Little Straight!");
+				UpdateScoreCard(choice,arr, 30);
+			}
+			else {
+				UpdateScoreCard(choice,arr,0);
+			}
 		}
 		else if(choice == 10) {
-			
+			Arrays.sort(arr);
+			if(arr[0] == 2 && arr[1] == 3 && arr[2] == 4 && arr[3] == 5 && arr[4] == 6) {
+				System.out.println("Big Straight!");
+				UpdateScoreCard(choice,arr, 30);
+			}
+			else {
+				UpdateScoreCard(choice,arr,0);
+			}
 		}
 		else if(choice == 11) {
 			
