@@ -1,13 +1,17 @@
 package GameOfYacht;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class main {
 	 public static void main(String[] args) {
 		 Scanner in = new Scanner(System.in); 
 		 int choice = 0;
+		 int scoreChoice = 0;
 		 int[] currentBoard;
+		 int[] scoreArray = new int[12];
+		 int mScore = 0;
 		
 		 boolean gameContinue = true;
 		 boolean gameInProgress = true;
@@ -16,6 +20,7 @@ public class main {
 		
 		 
 		 dice diceObj = new dice(); 
+		 scorecard scoreObj = new scorecard();
 		// gamestate gsOb = new gamestate();
 		 while(gameContinue == true) {
 			 Scanner myObj = new Scanner(System.in);
@@ -87,7 +92,11 @@ public class main {
 			}
 			
 			 if(finalReroll == 0){
-				 
+				 System.out.println("Enter score option, 1-12");
+				 scoreChoice = in.nextInt();
+				 mScore = scoreObj.ScoreChoice(scoreChoice, currentBoard);
+				 scoreArray[choice-1] = mScore;
+				 System.out.println(Arrays.toString(scoreArray));
 				}
 				
 		
